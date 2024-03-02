@@ -7,9 +7,14 @@ export const uploadRecipeAPI=async(recipe)=>{
     return await commonApI("POST",`${SERVER_URL}/allRecipe`,recipe)
 }
 
-// get Video api called  by view http://localhost:3000/videos
+// get Recipe api called  by view http://localhost:3000/Recipe
 export const getAllRecipeAPI=async()=>{
     return await commonApI("GET",`${SERVER_URL}/allRecipe`,"")
+}
+
+// Delete Recipe from videoCard by its Id to http://localhost:3000/Recipe
+export const removeRecipeAPI=async(recipeId)=>{
+    return await commonApI("DELETE",`${SERVER_URL}/allRecipe/${recipeId}`,{})
 }
 
 // // store watch history by videoCard to http://localhost:3000/history

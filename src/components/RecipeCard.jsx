@@ -1,14 +1,19 @@
 import React, { useState } from 'react'
 import { Card, Modal } from 'react-bootstrap';
+import { removeRecipeAPI } from '../services/allAPI';
 
-function RecipeCard({displayData}) {
+function RecipeCard({ displayData }) {
     const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+    const handleClose = () => setShow(false);
 
-  const handleShow = async() => {
-    setShow(true);
+    const handleShow = async () => {
+        setShow(true);
     }
+    const deleteRecipe=async(recipeId)=>{
+        await removeRecipeAPI(recipeId)
+    }
+
 
     return (
         <>
@@ -17,12 +22,12 @@ function RecipeCard({displayData}) {
                 <Card.Img onClick={handleShow} variant="top" height={"300px"} src={displayData?.imageURL} />
                 <Card.Body>
                     <Card.Title>
-                       <div className='d-flex justify-content-between'>
+                        <div className='d-flex justify-content-between'>
                             <p>{displayData?.caption}</p>
-                        
-                            <button className='btn fs-5' ><i className='fa-solid fa-trash text-danger'></i></button>
+
+                            <button className='btn fs-5' onClick={() => deleteRecipe(displayData?.id)} ><i className='fa-solid fa-trash text-danger'></i></button>
                         </div>
-                       
+
                         {/* {!insideCategory && <button className='btn' onClick={() => deleteVideo(displayData?.id)} ><i className='fa-solid fa-trash text-danger'></i></button>} */}
 
 
