@@ -44,7 +44,7 @@ function Header() {
     return (
         <>
             <Navbar className="bg-body-Primary justify-content-between shadow">
-                <Navbar.Brand className='text-primary ms-2' href="#home"><h3>RECIPE BOOK</h3></Navbar.Brand>
+                <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i> RecipE BooK <i class="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
 
                 <Row>
                     <Col xs="auto">

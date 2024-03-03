@@ -16,9 +16,12 @@ function App() {
   return (
     <>
     <Header/>
+    <div className='container mt-2 text-center'>
+      <p>Explore mouthwatering recipes contributed by cooks and users just like you!</p></div>
+   
       
   
-      <div className="container">
+      <div style={{backgroundColor:"black"}}>
         <View/>
       </div>
 
