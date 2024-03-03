@@ -39,7 +39,7 @@ function View() {
     return (
         <>
 
-             <h2 id='Sweet' className='pt-2 ms-3'><u>Sweets</u></h2>
+             <h2 id='Sweet' className=' pt-2 ms-3'><u>Sweets</u></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {/* {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => ( */}
                 {allRecipe?.length > 0 ?allRecipe?.filter(recipe => recipe.type === "Sweets").map((recipe, index) => (
