@@ -30,9 +30,9 @@ function App() {
     <>
       <Header />
       
-      <Carousel>
+      <Carousel style={{margin:'-15% 0% 0% 0%'}} >
           {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => (
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={1000} >
                 <img style={{ height: '100vh' }}
                   className="d-block w-100"
                   src={recipe?.imageURL}
