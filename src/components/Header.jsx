@@ -83,13 +83,13 @@ function Header() {
 
                 <Row>
                     <Col xs="auto" className='mt-1'><h4><a className='text-dark-emphasis' href='#home'>Home</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-info' href='#Sweet'>Sweets</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-warning' href='#Non-Veg'>Non-Veg</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-warning' href='#Sweet'>Sweets</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-danger' href='#Non-Veg'>Non-Veg</a></h4></Col>
                     <Col xs="auto" className='mt-1'><h4><a className='text-success' href='#Veg'>Veg</a></h4></Col>
                     <Col xs="auto" className='mt-1'><h4><a className='text-primary-emphasis' href='#Drinks'>Drinks</a></h4></Col>
 
                     <Col xs="auto">
-                        <Button onClick={handleShow} className='me-5 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>
+                        <Button onClick={handleShow} className='me-3 ms-3 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
