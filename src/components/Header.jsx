@@ -2,6 +2,8 @@ import React from 'react'
 import { Button, Col, FloatingLabel, Form, InputGroup, Modal, Navbar, Row } from 'react-bootstrap'
 import { useState } from 'react';
 import { getAllRecipeAPI, uploadRecipeAPI } from '../services/allAPI';
+// import "../bootstrap.min2.css"
+
 
 
 

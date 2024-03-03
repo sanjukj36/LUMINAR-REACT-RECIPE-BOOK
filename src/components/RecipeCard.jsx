@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Card, Modal } from 'react-bootstrap';
 import { removeRecipeAPI } from '../services/allAPI';
+import "../bootstrap.min3.css"
 
 function RecipeCard({ displayData }) {
     const [show, setShow] = useState(false);
