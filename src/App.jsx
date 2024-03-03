@@ -21,7 +21,7 @@ function App() {
    
       
   
-      <div style={{backgroundColor:"black"}}>
+      <div className='container p-3' style={{backgroundColor:"black"}}>
         <View/>
       </div>
 

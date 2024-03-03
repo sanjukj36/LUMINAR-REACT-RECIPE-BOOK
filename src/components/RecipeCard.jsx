@@ -18,7 +18,7 @@ function RecipeCard({ displayData }) {
 
     return (
         <>
-            <Card className='p-2 mb-2'>
+            <Card className='p-2 mb-2 shado'>
 
                 <Card.Img onClick={handleShow} variant="top" height={"300px"} src={displayData?.imageURL} />
                 <Card.Body>

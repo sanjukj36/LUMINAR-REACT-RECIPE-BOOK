@@ -39,7 +39,7 @@ function View() {
 
     return (
         <>
-        <h2 className='pt-2 ms-3'><u> Veg  Recipe</u></h2>
+        <h2 className='pt-2 ms-3'><u-> Veg  Recipe</u-></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => (
                     <Col key={index} className='border pt-2 mb-1 me- rounded ' sm={12} md={6} lg={4}>
@@ -51,7 +51,7 @@ function View() {
                     </Col>
 
                 )):
-                    <div className="text-danger fw-bolder">No Videos are upload yet!!!</div>
+                    <div className="text-danger fw-bolder">No Videos are upload yet !!!</div>
                 }
             </Row>
 
