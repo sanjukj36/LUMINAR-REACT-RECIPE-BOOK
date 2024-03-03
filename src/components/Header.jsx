@@ -82,11 +82,11 @@ function Header() {
                 <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i> RecipE BooK <i className="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
 
                 <Row>
-                    <Col xs="auto" className='mt-1'><h4><a href='/'>Home</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a href='#Sweet'>Sweets</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a href='#Non-Veg'>Non-Veg</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a href='#Veg'>Veg</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a href='#Drinks'>Drinks</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary' href='#home'>Home</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary' href='#Sweet'>Sweets</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary' href='#Non-Veg'>Non-Veg</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary' href='#Veg'>Veg</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary' href='#Drinks'>Drinks</a></h4></Col>
 
                     <Col xs="auto">
                         <Button onClick={handleShow} className='me-5 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>

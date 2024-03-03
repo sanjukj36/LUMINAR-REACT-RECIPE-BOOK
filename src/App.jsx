@@ -30,7 +30,7 @@ function App() {
     <>
       <Header />
       
-      <Carousel style={{margin:'-15% 0% 0% 0%'}} >
+      <Carousel id='home' style={{margin:'-15% 0% 0% 0%'}} >
           {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => (
             <Carousel.Item interval={1000} >
                 <img style={{ height: '100vh' }}
