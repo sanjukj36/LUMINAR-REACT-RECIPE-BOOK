@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, ButtonGroup, Col, FloatingLabel, Form, InputGroup, Modal, Navbar, Row, ToggleButton } from 'react-bootstrap'
 import { useState } from 'react';
 import { getAllRecipeAPI, uploadRecipeAPI } from '../services/allAPI';
 // import "../bootstrap.min2.css"
-
 
 
 function Header() {
@@ -12,6 +11,8 @@ function Header() {
 
     })
     const [show, setShow] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
+
 
     const handleClose = () => {
         setShow(false);
@@ -45,8 +46,6 @@ function Header() {
         handleClose()
     }
 
-
-    const [checked, setChecked] = useState(false);
     const [radioValue, setRadioValue] = useState('1');
 
     const radios = [
@@ -57,13 +56,38 @@ function Header() {
         
 
     ];
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+   
+
+    const handleScroll = () => {
+        console.log("Scrolling...", window.scrollY);
+    if (window.scrollY > 0) {
+        setScrolling(true);
+    } else {
+        setScrolling(false);
+    }
+    };
+
+   
 
     return (
         <>
-            <Navbar className="bg-body-Primary justify-content-between shadow">
-                <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i> RecipE BooK <i class="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
+            <Navbar className={`bg-body-Primary justify-content-between shadow`} style={{ position: scrolling ? 'fixed' : 'relative', top: 0, left: 0, width: '100%', zIndex: 1000 }}>
+
+                <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i> RecipE BooK <i className="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
 
                 <Row>
+                    <Col xs="auto" className='mt-1'><h4><a href='/'>Home</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a href='#Sweet'>Sweets</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a href='#Non-Veg'>Non-Veg</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a href='#Veg'>Veg</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a href='#Drinks'>Drinks</a></h4></Col>
+
                     <Col xs="auto">
                         <Button onClick={handleShow} className='me-5 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>
 
@@ -73,8 +97,7 @@ function Header() {
                             </Modal.Header>
                             <Modal.Body>
                                 <Form>
-
-                                <ButtonGroup>
+                                    <ButtonGroup>
                                         {radios.map((radio, idx) => (
                                             <ToggleButton
                                                 key={idx}
@@ -99,13 +122,11 @@ function Header() {
                                         <Form.Control value={uploadRecipe.imageURL} onChange={e => setUploadRecipe({ ...uploadRecipe, imageURL: e.target.value })} type="text" placeholder="Recipe Name" />
                                     </FloatingLabel>
 
-
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                         <Form.Label>Your Recipe</Form.Label>
                                         <Form.Control value={uploadRecipe.RecipeDetail} onChange={e => setUploadRecipe({ ...uploadRecipe, RecipeDetail: e.target.value })} as="textarea" rows={9} />
                                     </Form.Group>
                                 </Form>
-
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
@@ -116,7 +137,6 @@ function Header() {
                                 </Button>
                             </Modal.Footer>
                         </Modal>
-
                     </Col>
                 </Row>
             </Navbar>

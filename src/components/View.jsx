@@ -38,7 +38,8 @@ function View() {
 
     return (
         <>
-             <h2 className='pt-2 ms-3'><u>Sweets</u></h2>
+
+             <h2 id='Sweet' className='pt-2 ms-3'><u>Sweets</u></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {/* {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => ( */}
                 {allRecipe?.length > 0 ?allRecipe?.filter(recipe => recipe.type === "Sweets").map((recipe, index) => (
@@ -56,7 +57,10 @@ function View() {
                 }
                 
             </Row>
-            <h2 className='pt-2 ms-3'><u> Non-Veg</u></h2>
+
+            <hr />
+
+            <h2 id='Non-Veg' className='pt-2 ms-3'><u> Non-Veg</u></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {/* {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => ( */}
                 {allRecipe?.length > 0 ?allRecipe?.filter(recipe => recipe.type === "Non-Veg").map((recipe, index) => (
@@ -72,9 +76,11 @@ function View() {
                         )) :
                     <div className="text-danger fw-bolder">No Videos are upload yet !!!</div>
                 }
-                
             </Row>
-            <h2 className='pt-2 ms-3'><u> Veg </u></h2>
+
+            <hr />
+
+            <h2 id='Veg' className='pt-2 ms-3'><u> Veg </u></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {/* {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => ( */}
                 {allRecipe?.length > 0 ?allRecipe?.filter(recipe => recipe.type === "Veg").map((recipe, index) => (
@@ -93,7 +99,9 @@ function View() {
                 
             </Row>
 
-            <h2 className='pt-2 ms-3'><u>Drinks</u></h2>
+            <hr />
+
+            <h2 id='Drinks' className='pt-2 ms-3'><u>Drinks</u></h2>
             <Row className='mt-3' droppable="true" onDragOver={e => dragOverView(e)} onDrop={e => handleCategoryVideo(e)} >
                 {/* {allRecipe?.length > 0 ? allRecipe?.map((recipe, index) => ( */}
                 {allRecipe?.length > 0 ?allRecipe?.filter(recipe => recipe.type === "Drinks").map((recipe, index) => (
