@@ -18,9 +18,9 @@ function RecipeCard({ displayData }) {
 
     return (
         <>
-            <Card className='p-2 mb-2 shado'>
+            <Card className='p-2 mb-2 shadow'>
 
-                <Card.Img onClick={handleShow} variant="top" height={"300px"} src={displayData?.imageURL} />
+                <Card.Img onClick={handleShow} variant="top" height={"300px"}src={displayData?.imageURL} />
                 <Card.Body>
                     <Card.Title>
                         <div className='d-flex justify-content-between'>
@@ -39,7 +39,7 @@ function RecipeCard({ displayData }) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className='center-all'>{displayData?.caption}</Modal.Title>
+                    <Modal.Title className='text-center'>{displayData?.caption}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Card.Img onClick={handleShow} variant="top" height={"300px"} src={displayData?.imageURL} />
