@@ -52,8 +52,9 @@ function Header() {
     const radios = [
         { name: 'Non-Veg', value: 'Non-Veg' },
         { name: 'Veg', value: 'Veg' },
-        { name: 'Drinks', value: 'Drinks' },
         { name: 'Sweets', value: 'Sweets' },
+        { name: 'Drinks', value: 'Drinks' },
+        
 
     ];
 
@@ -64,29 +65,16 @@ function Header() {
 
                 <Row>
                     <Col xs="auto">
-                        <Button onClick={handleShow} className='me-5 text-primary bg-body-secondary' type="submit">Write your Recipe for as</Button>
+                        <Button onClick={handleShow} className='me-5 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Fill The Following For Your Recipe</Modal.Title>
+                                <Modal.Title>Your Recipe</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                                 <Form>
-                                    <FloatingLabel controlId="floatingInput" label="Recipe Name" className="mb-3">
-                                        <Form.Control value={uploadRecipe.caption} onChange={e => setUploadRecipe({ ...uploadRecipe, caption: e.target.value })} type="text" placeholder="Recipe Name" />
-                                    </FloatingLabel>
 
-                                    <FloatingLabel controlId="floatingInput" label="Image URL" className="mb-3">
-                                        <Form.Control value={uploadRecipe.imageURL} onChange={e => setUploadRecipe({ ...uploadRecipe, imageURL: e.target.value })} type="text" placeholder="Recipe Name" />
-                                    </FloatingLabel>
-
-
-                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                        <Form.Label>Example Your Recipe</Form.Label>
-                                        <Form.Control value={uploadRecipe.RecipeDetail} onChange={e => setUploadRecipe({ ...uploadRecipe, RecipeDetail: e.target.value })} as="textarea" rows={9} />
-                                    </Form.Group>
-
-                                    <ButtonGroup>
+                                <ButtonGroup>
                                         {radios.map((radio, idx) => (
                                             <ToggleButton
                                                 key={idx}
@@ -102,6 +90,20 @@ function Header() {
                                             </ToggleButton>
                                         ))}
                                     </ButtonGroup>
+
+                                    <FloatingLabel controlId="floatingInput" label="Recipe Name" className="mb-3 mt-3">
+                                        <Form.Control value={uploadRecipe.caption} onChange={e => setUploadRecipe({ ...uploadRecipe, caption: e.target.value })} type="text" placeholder="Recipe Name" />
+                                    </FloatingLabel>
+
+                                    <FloatingLabel controlId="floatingInput" label="Image URL" className="mb-3">
+                                        <Form.Control value={uploadRecipe.imageURL} onChange={e => setUploadRecipe({ ...uploadRecipe, imageURL: e.target.value })} type="text" placeholder="Recipe Name" />
+                                    </FloatingLabel>
+
+
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>Your Recipe</Form.Label>
+                                        <Form.Control value={uploadRecipe.RecipeDetail} onChange={e => setUploadRecipe({ ...uploadRecipe, RecipeDetail: e.target.value })} as="textarea" rows={9} />
+                                    </Form.Group>
                                 </Form>
 
                             </Modal.Body>
