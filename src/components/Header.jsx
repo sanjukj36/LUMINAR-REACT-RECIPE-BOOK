@@ -79,17 +79,17 @@ function Header() {
         <>
             <Navbar className={`bg-body-Primary justify-content-between shadow`} style={{ position: scrolling ? 'fixed' : 'relative', top: 0, left: 0, width: '100%', zIndex: 1000 }}>
 
-                <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i> RecipE BooK <i className="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
+                <Navbar.Brand className='text-primary ms-2' href="#home"><h3><i className="fa-solid fa-bowl-food fa-fade"></i><strong> RecipE BooK</strong> <i className="fa-solid fa-book fa-fade"></i></h3> </Navbar.Brand>
 
                 <Row>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-dark-emphasis' href='#home'>Home</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-warning' href='#Sweet'>Sweets</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-danger' href='#Non-Veg'>Non-Veg</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-success' href='#Veg'>Veg</a></h4></Col>
-                    <Col xs="auto" className='mt-1'><h4><a className='text-primary-emphasis' href='#Drinks'>Drinks</a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-dark-emphasis' href='#home'><strong>Home</strong></a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-warning' href='#Sweet'><strong>Sweets</strong></a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-danger' href='#Non-Veg'><strong>Non-Veg</strong></a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-success' href='#Veg'><strong>Veg</strong></a></h4></Col>
+                    <Col xs="auto" className='mt-1'><h4><a className='text-primary-emphasis' href='#Drinks'><strong>Drinks</strong></a></h4></Col>
 
                     <Col xs="auto">
-                        <Button onClick={handleShow} className='me-3 ms-3 text-primary bg-body-secondary' type="submit">Add Your Recipe For As</Button>
+                        <Button onClick={handleShow} className='me-3 ms-3 text-primary bg-body-secondary' type="submit"><strong>Add Your Recipe For As</strong></Button>
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
